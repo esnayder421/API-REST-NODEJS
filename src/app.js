@@ -2,11 +2,25 @@ import express from 'express';
 
 import employeesRoutes from './routes/employees.routes.js'
 import indexRoutes from './routes/index.routes.js'
+import cors from 'cors'
+
 
 
 
 
 const app = express();
+
+
+
+const corsOptions ={
+   origin:'*', 
+   credentials:true,            //access-control-allow-credentials:true
+   optionSuccessStatus:200,
+}
+
+app.use(cors(corsOptions)) // Use this after the variable declaration
+console.log('configuration ok')
+
 
 //con esta linea de codigo interpreto los json y se los paso a las rutas
 app.use(express.json());
