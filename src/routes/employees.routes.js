@@ -13,6 +13,9 @@ router.post('/employee', CreateEmployees)
 router.put('/employee/:id', UpdateEmployees)
 
 router.delete('/employee/:id', DeleteEmployees)
+router.options('/employee',(req,res)=>{
+    return res.status(500).json({"message":"Ruta no valida(OPTIOS)"})
+})
 
 
 
