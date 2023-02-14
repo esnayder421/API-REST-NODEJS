@@ -11,13 +11,6 @@ import cors from 'cors'
 const app = express();
 app.use(cors());
 
-app.use(cors({
-    origin: 'https://api-rest-nodejs-production.up.railway.app/employee', // use your actual domain name (or localhost), using * is not recommended
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
-}))
-
 //con esta linea de codigo interpreto los json y se los paso a las rutas
 app.use(express.json());
 
