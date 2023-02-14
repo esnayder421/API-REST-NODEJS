@@ -17,19 +17,6 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true
 }))
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authortization');
-    res.setHeader('Acces-Control-Allow-Methods', 'GET, POST, PATCH, DELETE');
-})
-app.use(x => x
-    .AllowAnyMethod()
-    .AllowAnyHeader()
-    .SetIsOriginAllowed(origin => true) // allow any origin 
-    .AllowCredentials());
-
-
-
 
 //con esta linea de codigo interpreto los json y se los paso a las rutas
 app.use(express.json());
